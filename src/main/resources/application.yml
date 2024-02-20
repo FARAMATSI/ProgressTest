@@ -1,0 +1,26 @@
+server:
+  port: 7900
+
+spring:
+  datasource:
+    url: 'jdbc:datadirect:openedge://localhost:6204;databaseName=pscDB;'
+    driver-class-name: com.ddtek.jdbc.openedge.OpenEdgeDriver
+    username: SYSPROGRESS
+    password: '12345'
+
+  application:
+    name: progress-test
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+      show-sql: true
+      format_sql: true
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.ProgressDialect
+
+  main:
+    allow-bean-definition-overriding: true
